@@ -1,7 +1,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    margin: 40px;
+    margin: 10px;
     background-image: url(img/grey-gradient.jpg);
     background-size: cover;
     position: relative;
@@ -16,7 +16,7 @@ h1, h2, h3 {
     font-weight: bold;
 }
 #h1_desc {
-    margin-bottom: 70px;
+    margin-bottom: 30px;
     font-style: italic;
 }
 ul {
@@ -25,6 +25,12 @@ ul {
     color: black;
     text-align: center;
     list-style-type: none;
+}
+.bold-li {
+    font-weight: bold;
+}
+.bold-li > *{
+    font-weight: normal;
 }
 li {
     margin-bottom: 10px;
@@ -36,6 +42,9 @@ li {
     max-width: 600px; 
     margin-left: auto;
     margin-right: auto;
+}
+.bold-ul > li {
+    font-weight: normal;
 }
 a {
     text-decoration: none;
@@ -53,7 +62,8 @@ div {
     text-align: center; 
 }
 .contact-info {
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-bottom: 200px;
     font-size: 16px;
     background-color: #f4f4f4; 
     padding: 20px;
