@@ -2,7 +2,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 40px;
-    background-image: url(img/pexels-alex-blokstra-1327329.jpg);
+    background-image: url(img/grey-gradient.jpg);
     background-size: cover;
     position: relative;
 }
@@ -16,7 +16,7 @@ h1, h2, h3 {
     font-weight: bold;
 }
 #h1_desc {
-    margin-bottom: 100px;
+    margin-bottom: 70px;
     font-style: italic;
 }
 ul {
@@ -29,7 +29,7 @@ ul {
 li {
     margin-bottom: 10px;
     padding: 10px;
-    border: 1px solid black;
+    border: 1px grey;
     border-radius: 5px;
     background-color: #F5F5F5;
     width: 70%; 
@@ -47,16 +47,23 @@ a:hover {
 div {
     text-align: center;
 }
+.container {
+    width: 60%; 
+    margin: 0 auto;
+    text-align: center; 
+}
 .contact-info {
-    margin-top: 30px;
+    margin-top: 10px;
     font-size: 16px;
-  }
-  
-  .contact-info a {
+    background-color: #f4f4f4; 
+    padding: 20px;
+    display: inline-block;
+    border-radius: 15px; 
+}
+.contact-info a {
     color: #0066cc;
     text-decoration: none;
-  }
-  
-  .contact-info a:hover {
+} 
+.contact-info a:hover {
     text-decoration: underline;
-  }
+}
