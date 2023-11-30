@@ -14,6 +14,7 @@ h1, h2, h3 {
     color: #333;
     text-align: center;
     font-weight: bold;
+    font-size:xx-large;
 }
 #h1_desc {
     margin-bottom: 30px;
@@ -25,6 +26,10 @@ ul {
     color: black;
     text-align: center;
     list-style-type: none;
+}
+.two-columns {
+    columns: 2;
+    break-inside: avoid;
 }
 .bold-li {
     font-weight: bold;
