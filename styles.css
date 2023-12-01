@@ -19,6 +19,7 @@ h1, h2, h3 {
 #h1_desc {
     margin-bottom: 30px;
     font-style: italic;
+    font-size:medium;
 }
 ul {
     list-style-type: none;
