@@ -23,20 +23,22 @@ h1, h2, h3 {
 }
 ul {
     list-style-type: none;
-    padding: 0;
+    padding: 10px;
     color: black;
     text-align: center;
     list-style-type: none;
+    columns: 4;
 }
-.two-columns {
-    columns: 2;
+.four-columns li {
     break-inside: avoid;
 }
 .bold-li {
     font-weight: bold;
+    break-inside: avoid;
 }
 .bold-li > *{
     font-weight: normal;
+    break-inside: avoid;
 }
 li {
     margin-bottom: 10px;
