@@ -85,3 +85,8 @@ div {
 .contact-info a:hover {
     text-decoration: underline;
 }
+span img {
+    display: inline-block; /* Display images inline */
+    vertical-align: middle; /* Align images vertically */
+    margin-right: 5px; /* Adjust margin between images */
+}
