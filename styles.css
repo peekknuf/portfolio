@@ -32,10 +32,12 @@ ul {
 }
 .four-columns li {
     break-inside: avoid;
+    width: 350px;
 }
 .bold-li {
     font-weight: bold;
     break-inside: avoid;
+    width: 350px;
 }
 .bold-li > *{
     font-weight: normal;

@@ -3,6 +3,7 @@
 <head>
     <title>Well, hello there!</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="toggledesc.js" defer></script>
 </head>
 <body>
     <h1>Maksym Ionutsa</h1>
@@ -22,13 +23,14 @@
                 <br>
                 <a href="https://public.tableau.com/app/profile/maksym.ionutsa/viz/Covid_19_data_16736588526850/Dashboard1" target="_blank">
                     <img src="img/vac.png" alt="Vaccination Dashboard Thumbnail" width="250" height="200">
-                </a>
-                <p>
+                </a> 
+                <p id="description" style="display: none;">
                     A comprehensive Tableau dashboard for tracking COVID-19 data from September 2020 to October 2021. <br>
                     Implemented metrics showcasing vaccination rates, including fully and partially vaccinated individuals among the total population. <br>
                     Integrated an interactive map offering filters by country and continent, and enabled date-specific analysis. <br>
                     Incorporated a graphical representation illustrating the correlation between GDP per capita and the rate of full vaccination per 100 people.
                 </p>
+                <button onclick="toggleDescription()">Show Full Description</button>
             </div>
         </li>
         <li class="bold-li">
@@ -40,14 +42,15 @@
                 <br>
                 <a href="https://public.tableau.com/app/profile/maksym.ionutsa/viz/ProfitsDash/Dashboard1" target="_blank">
                     <img src="img/store.png" alt="Superstore Dashboard" width="250" height="200">
-                </a>
-                <p>
+                </a> <br>
+                <p id="description" style="display: none;">
                     Designed and developed an interactive Store Dashboard encompassing crucial metrics such as profit, sales, and profit-to-sales ratio, spanning multiple years. <br>
                     Incorporated an interactive map feature allowing geographical insights and filters by year and region for detailed analysis. <br>
                     Implemented visualizations for profit per sub-category, identifying high-performing segments. <br>
                     Included comprehensive analyses showcasing best and worst performing customers, their respective contributions, and results. <br>
                     Additionally, integrated a seasonality graph presenting trends across available data, providing a comprehensive overview of the store's performance. 
                 </p>
+                <button onclick="toggleDescription()">Show Full Description</button>
             </div>
         </li>
         <li class="bold-li">
@@ -60,12 +63,13 @@
                 <a href="https://public.tableau.com/app/profile/maksym.ionutsa/viz/ChurnAnalytics_16812536285050/Dashboard1" target="_blank">
                     <img src="img/churn.png" alt="Churn TeleCom Dashboard" width="250" height="200">
                 </a>
-                <p>
+                <p id="description" style="display: none;">
                     Crafted an insightful Telecom Churn Analysis Dashboard featuring an interactive map for geographical insights. <br>
                     Highlighted critical metrics including total customer base, churned customers, and average churn rates for comprehensive analysis. <br>
                     Integrated a bar chart illustrating churn reasons, providing a detailed breakdown. <br>
                     Implemented a segmented churn rate analysis per three-year age bins, offering nuanced insights into churn behavior across different age groups.
                 </p>
+                <button onclick="toggleDescription()">Show Full Description</button>
             </div>
         </li>
         <li class="bold-li">
@@ -78,7 +82,7 @@
                 <a href="https://public.tableau.com/app/profile/maksym.ionutsa/viz/HRreport_16940327590050/Dashboard11" target="_blank">
                     <img src="img/hr.png" alt="HR Data Dashboard" width="250" height="200">
                 </a>
-                <p>
+                <p id="description" style="display: none;">
                     Developed a comprehensive HR Data Dashboard encompassing vital insights. <br>
                     Provided an overview of company staff distributed across departments. <br>
                     Visualized the average age at hiring through a line chart for historical analysis. <br>
@@ -87,6 +91,7 @@
                     Included visualizations showcasing median salary disparities by gender and ethnicity, accompanied by attrition breakdowns based on ethnicity. <br>
                     Additionally, incorporated a compelling visualization illustrating the correlation between educational backgrounds and current job roles, offering insights into career trajectories within the organization.
                 </p>
+                <button onclick="toggleDescription()">Show Full Description</button>
             </div>
         </li>
     </ul>
