@@ -2,9 +2,10 @@
 body {
     font-family: Arial, sans-serif;
     margin: 10px;
-    background-image: url(img/grey-gradient.jpg);
-    background-size: cover;
+    background-image: url(img/elizabeth-lies-T9Gsevu_N8Y-unsplash.jpg);
+    background-size: contain;
     position: relative;
+
 }
 img {
     display: block;
@@ -50,6 +51,7 @@ li {
     max-width: 600px; 
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 2px 2px grey;
 }
 .bold-ul > li {
     font-weight: normal;
@@ -67,7 +69,8 @@ div {
 .container {
     width: 60%; 
     margin: 0 auto;
-    text-align: center; 
+    text-align: center;
+     
 }
 .contact-info {
     margin-top: 20px;
@@ -76,7 +79,8 @@ div {
     background-color: #f4f4f4; 
     padding: 20px;
     display: inline-block;
-    border-radius: 15px; 
+    border-radius: 15px;
+    box-shadow: 2px 2px grey;
 }
 .contact-info a {
     color: #0066cc;
