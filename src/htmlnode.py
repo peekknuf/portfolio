@@ -1,4 +1,3 @@
-# htmlnode.py
 
 class HTMLNode:
     def __init__(self, tag=None, value=None, children=None, props=None):
@@ -31,6 +30,23 @@ class LeafNode(HTMLNode):
             return self.value  # Render as raw text if there's no tag
         else:
             props_html = self.props_to_html()
-            # Add a leading space if props_html is non-empty
             return f"<{self.tag}{(' ' + props_html) if props_html else ''}>{self.value}</{self.tag}>"
 
+class ParentNode(HTMLNode):
+    def __init__(self, tag, children, props=None):
+        if not tag:
+            raise ValueError("ParentNode must have a tag.")
+        if not children:
+            raise ValueError("ParentNode must have children.")
+        super().__init__(tag=tag, children=children, props=props)
+
+    def to_html(self):
+        if not self.tag:
+            raise ValueError("ParentNode must have a tag to render.")
+        if not self.children:
+            raise ValueError("ParentNode must have children to render.")
+
+        children_html = ''.join(child.to_html() for child in self.children)
+        props_html = self.props_to_html()
+
+        return f"<{self.tag}{(' ' + props_html) if props_html else ''}>{children_html}</{self.tag}>"
