@@ -1,4 +1,5 @@
 from enum import Enum
+from split_nodes import split_nodes_image, split_nodes_link, split_nodes_delimiter
 
 class HTMLNode:
     def __init__(self, tag=None, value=None, children=None, props=None):
@@ -19,13 +20,12 @@ class HTMLNode:
 
 class TextType(Enum):
     HTML = "html"
-    LINK = "html"
-    LEAF = "leaf"
     TEXT = "text"
-    CODE = "code"  
-    BOLD = "bold"  
+    BOLD = "bold"
     ITALIC = "italic"
+    CODE = "code"
     IMAGE = "image"
+    LINK = "link"
     
 
 
@@ -96,26 +96,16 @@ def text_node_to_html_node(text_node) -> LeafNode:
     else:
         raise ValueError("Invalid text node")
     
-
-def split_nodes_delimiter(old_nodes, delimiter, text_type):
-    new_nodes = []
+def text_to_textnodes(text):
+    nodes = [TextNode(text, TextType.TEXT)]
+    nodes = split_nodes_image(nodes)
+    nodes = split_nodes_link(nodes)
+    nodes = split_nodes_delimiter(nodes, "**", TextType.BOLD)
+    nodes = split_nodes_delimiter(nodes, "*", TextType.ITALIC)
+    nodes = split_nodes_delimiter(nodes, "`", TextType.CODE)
+    return nodes
     
-    for node in old_nodes:
-        if isinstance(node, TextNode) and node.text_type == TextType.TEXT.value:
-            parts = node.text.split(delimiter)
-            if len(parts) == 1 and not parts[0]: 
-                new_nodes.append(TextNode("", TextType.TEXT))
-            else:
-                for i, part in enumerate(parts):
-                    if i % 2 == 0:
-                        if part:
-                            new_nodes.append(TextNode(part, TextType.TEXT))
-                    else:
-                        new_nodes.append(TextNode(part, text_type))
-        else:
-            new_nodes.append(node)
     
-    return new_nodes
 
 
 
