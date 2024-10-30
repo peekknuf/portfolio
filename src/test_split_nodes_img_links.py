@@ -15,7 +15,7 @@ class TestNodeSplitting(unittest.TestCase):
         self.assertEqual(new_nodes[0].text, "This is text with a link ")
         self.assertEqual(new_nodes[0].text_type, TextType.TEXT.value)
         self.assertEqual(new_nodes[1].text, "to boot dev")
-        self.assertEqual(new_nodes[1].text_type, TextType.HTML.value)  # Note: LINK is "html"
+        self.assertEqual(new_nodes[1].text_type, TextType.HTML.value)  
         self.assertEqual(new_nodes[1].url, "https://www.boot.dev")
         self.assertEqual(new_nodes[2].text, " and some text after")
         self.assertEqual(new_nodes[2].text_type, TextType.TEXT.value)
@@ -88,9 +88,8 @@ class TestNodeSplitting(unittest.TestCase):
             "Here's a link with ![image](https://img.com) inside [it](https://link.com)",
             TextType.TEXT
         )
-        # First split images
         nodes_after_images = split_nodes_image([node])
-        # Then split links
+
         final_nodes = []
         for n in nodes_after_images:
             if n.text_type == TextType.TEXT.value:
@@ -98,7 +97,7 @@ class TestNodeSplitting(unittest.TestCase):
             else:
                 final_nodes.append(n)
         
-        self.assertEqual(len(final_nodes), 5)
+        self.assertEqual(len(final_nodes), 4)
         self.assertEqual(final_nodes[0].text, "Here's a link with ")
         self.assertEqual(final_nodes[1].text, "image")
         self.assertEqual(final_nodes[1].text_type, TextType.IMAGE.value)
@@ -107,11 +106,10 @@ class TestNodeSplitting(unittest.TestCase):
         self.assertEqual(final_nodes[3].text_type, TextType.HTML.value)
 
     def test_split_nodes_edge_cases(self):
-        # Test empty nodes list
+        
         self.assertEqual(split_nodes_link([]), [])
         self.assertEqual(split_nodes_image([]), [])
         
-        # Test non-text node types
         link_node = TextNode("existing link", TextType.HTML, "https://example.com")
         self.assertEqual(split_nodes_link([link_node]), [link_node])
         self.assertEqual(split_nodes_image([link_node]), [link_node])
@@ -119,7 +117,7 @@ class TestNodeSplitting(unittest.TestCase):
     def test_split_nodes_consecutive_elements(self):
         node = TextNode(
             "[link1](https://one.com)[link2](https://two.com)![img](https://img.com)",
-            TextType.TEXT.value
+            TextType.TEXT
         )
         nodes = split_nodes_link([node])
         
