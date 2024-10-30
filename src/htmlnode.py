@@ -19,18 +19,25 @@ class HTMLNode:
 
 class TextType(Enum):
     HTML = "html"
+    LINK = "html"
     LEAF = "leaf"
     TEXT = "text"
     CODE = "code"  
     BOLD = "bold"  
-    ITALIC = "italic"  
+    ITALIC = "italic"
+    IMAGE = "image"
+    
 
 
 class TextNode:
     def __init__(self, text, text_type, url=None):
-        self.text = text
-        self.text_type = text_type.value  
-        self.url = url 
+        if isinstance(text_type, TextType):
+            self.text = text
+            self.text_type = text_type.value 
+            self.url = url
+        else:
+            raise ValueError("text_type must be an instance of TextType")
+
     def __eq__(self, other):
         if isinstance(other, TextNode):
             return (self.text == other.text and
@@ -109,4 +116,6 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
             new_nodes.append(node)
     
     return new_nodes
+
+
 
